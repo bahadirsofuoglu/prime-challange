@@ -2,9 +2,7 @@
   <div>
     <Navbar />
     <Sidebar />
-    <section class="content-section">
-      test
-    </section>
+    <section class="content-section"></section>
   </div>
 </template>
 <script>
@@ -19,6 +17,6 @@ export default {
 </script>
 <style>
 .content-section {
-  padding: 56px 0 0 200px;
+  padding: 56px 0 0 280px;
 }
 </style>

@@ -34,9 +34,3 @@ export default {
   }
 }
 </script>
-<style>
-.nav-container {
-  height: 56px;
-  padding-left: 200px;
-}
-</style>

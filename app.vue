@@ -10,13 +10,10 @@ body {
   padding: 0;
   height: 100vh;
   width: 100vw;
+  font-family: 'Inter';
+  font-style: normal;
 }
-#__nuxt {
-  margin: 0;
-  padding: 0;
-  height: 100vh;
-  width: 100vw;
-}
+
 * {
   box-sizing: border-box;
   color: #9e9e9e;
