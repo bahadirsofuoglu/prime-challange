@@ -2,7 +2,7 @@
   <div>
     <h5>{{ headerTitle }}</h5>
     <div
-      class="p-3 flex flex-row justify-content-between white text-600"
+      class="p-3 flex flex-row justify-content-between white text-600 cursor-pointer"
       :class="{ active: isActive(index) }"
       v-for="(item, index) in items"
       :key="item.title"

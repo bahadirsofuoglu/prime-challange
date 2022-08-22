@@ -2,7 +2,9 @@
   <div>
     <Navbar />
     <Sidebar />
-    <section class="content-section"></section>
+    <section class="content-section">
+      <slot />
+    </section>
   </div>
 </template>
 <script>
