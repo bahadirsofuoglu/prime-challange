@@ -10,6 +10,7 @@
     "nuxt": "3.0.0-rc.8"
   },
   "dependencies": {
-    "primeflex": "^3.2.1"
+    "primeflex": "^3.2.1",
+    "primeicons": "^5.0.0"
   }
 }

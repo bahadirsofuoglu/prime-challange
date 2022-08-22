@@ -5,5 +5,8 @@ export default defineNuxtConfig({
   ssr: true,
   typescript: false,
   components: true,
-  css: ['/node_modules/primeflex/primeflex.css']
+  css: [
+    '/node_modules/primeflex/primeflex.css',
+    '/node_modules/primeicons/primeicons.css'
+  ]
 })
