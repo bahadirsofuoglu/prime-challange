@@ -1,7 +1,7 @@
 <template>
   <div class="search-input-container flex flex-row align-items-center">
-    <Icon name="search" class="pr-1" />
-    <Input type="text" placeholder="asdas" class="border-none" />
+    <Icon name="search" class="pr-3" />
+    <Input type="text" placeholder="Search" class="border-none" />
   </div>
 </template>
 

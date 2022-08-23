@@ -1,5 +1,7 @@
 <template>
-  <div class="sidebar-container fixed left-0 flex flex-column pl-3">
+  <div
+    class="sidebar-container fixed left-0 flex flex-column border-right-solid border-right-1 border-300 border-top-0 pl-3"
+  >
     <div>
       <img src="@/assets/svg/logo-export.svg" class="pt-3" />
     </div>
