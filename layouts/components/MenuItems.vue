@@ -1,6 +1,8 @@
 <template>
   <div>
-    <h5>{{ headerTitle }}</h5>
+    <h3 class="text-md font-normal line-height-2 text-600">
+      {{ headerTitle }}
+    </h3>
     <div
       class="p-3 flex flex-row justify-content-between white text-600 cursor-pointer"
       :class="{ active: isActive(index) }"

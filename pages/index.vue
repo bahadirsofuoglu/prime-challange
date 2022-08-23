@@ -1,8 +1,12 @@
 <template>
   <NuxtLayout>
     <div class="p-3 surface-50">
-      <h1 class="pb-1 text-900 text-lg line-height-4 mb-1">Populer Products</h1>
-      <span>Selected Exclusively</span>
+      <h1
+        class="pb-1 text-900 text-2xl font-normal line-height-3 line-height-4 mb-1"
+      >
+        Popular Products
+      </h1>
+      <span class="text-lg">Selected Exclusively</span>
       <div class="pt-3">
         <card-product-list title="Top Sales" :products="products" />
       </div>

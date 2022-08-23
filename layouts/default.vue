@@ -1,7 +1,7 @@
 <template>
   <div>
     <Navbar />
-    <Sidebar />
+    <Sidebar v-if="sideBarStatus" />
     <section class="content-section">
       <slot />
     </section>
@@ -21,9 +21,24 @@ export default {
       themeStore: useThemeStore()
     }
   },
+  mounted () {
+    this.sideBarStatus()
+  },
   methods: {
     toggleSidebar () {
       this.themeStore.changeSidebarStatus()
+    },
+    isMobile () {
+      if (process.client) {
+        return screen.width < 568
+      }
+      return true
+    },
+    sideBarStatus () {
+      if (!this.isMobile()) {
+        return true
+      }
+      return this.themeStore.sidebarStatus
     }
   }
 }

@@ -6,7 +6,7 @@
     <div>
       <img src="@/assets/svg/logo-export.svg" class="pt-3" />
     </div>
-    <div class="flex-1 pt-4">
+    <div class="flex-1 pt-3">
       <menu-items
         v-for="menuItem in menuItems"
         :key="menuItem.title"
@@ -16,7 +16,7 @@
     </div>
     <div class="pr-3">
       <div
-        class="border-top-1 border-300 flex justify-content-between align-items-center py-3"
+        class="border-top-1 border-300 flex justify-content-between align-items-center py-2"
       >
         <img src="@/assets/img/avatar.png" />
         <span class="text-900 flex-1 pl-2">Amy Elsner</span>
@@ -85,12 +85,20 @@ export default {
       themeStore: useThemeStore()
     }
   },
+  mounted () {
+    if (this.isMobile()) {
+      this.themeStore.changeSidebarStatus(false)
+    }
+  },
   methods: {
     toggleSidebar () {
       this.themeStore.changeSidebarStatus()
     },
     isMobile () {
-      return screen.width < 568
+      if (process.client) {
+        return screen.width < 568
+      }
+      return true
     },
     clickOutside () {
       if (!this.isMobile()) {

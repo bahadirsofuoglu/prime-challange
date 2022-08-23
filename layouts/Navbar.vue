@@ -9,16 +9,16 @@
         class="icon cursor-pointer"
         @click="toggleSidebar"
       />
-      <SearchInput v-if="!isMobile()" />
+      <SearchInput v-if="!isMobileDevice" class="pl-3" />
       <div class="flex align-items-center">
-        <Icon v-if="isMobile()" name="search" class="mr-3" />
+        <Icon v-if="isMobileDevice" name="search" class="mr-5" />
         <Icon
           v-for="menuItem in menuItems"
           :key="menuItem.name"
           :name="menuItem.name"
-          class="mr-3"
+          class="mr-5"
         />
-        <img src="@/assets/img/avatar.png" class="mr-3" />
+        <img src="@/assets/img/avatar.png" class="mr-4" />
       </div>
     </div>
   </div>
@@ -41,16 +41,23 @@ export default {
           name: 'bell'
         }
       ],
-      themeStore: useThemeStore()
+      themeStore: useThemeStore(),
+      isMobileDevice: null
     }
   },
-
+  mounted () {
+    this.isMobileDevice = this.isMobile()
+  },
   methods: {
     toggleSidebar () {
       this.themeStore.changeSidebarStatus()
     },
     isMobile () {
-      return screen.width < 568
+      if (process.client) {
+        return screen.width < 568
+      }
+
+      return true
     }
   }
 }

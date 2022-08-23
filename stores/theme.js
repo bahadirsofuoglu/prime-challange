@@ -3,14 +3,15 @@ import { defineStore } from 'pinia'
 export const useThemeStore = defineStore('themeStore', {
   state: () => {
     return {
-      sidebarStatus: true
+      sidebarStatus: false
     }
   },
   actions: {
-    changeSidebarStatus (status) {
-      this.sidebarStatus = status ? status : !this.sidebarStatus
+    async changeSidebarStatus (status) {
+      this.sidebarStatus = status === false ? status : !this.sidebarStatus
 
-      const body = document.querySelector('body')
+      const bodyStyle = document.querySelector('body').style
+
       const sidebarStyle = document.querySelector('.sidebar-container').style
       const contentStyle = document.querySelector('.content-section').style
 
@@ -18,10 +19,12 @@ export const useThemeStore = defineStore('themeStore', {
         sidebarStyle.setProperty('display', 'flex', 'important')
         contentStyle.setProperty('backdrop-filter', 'blur(4px)')
         contentStyle.setProperty('opacity', '0.3')
+        bodyStyle.setProperty('overflow', 'hidden')
       } else {
         sidebarStyle.setProperty('display', 'none', 'important')
         contentStyle.setProperty('backdrop-filter', 'unset')
         contentStyle.setProperty('opacity', 'unset')
+        bodyStyle.setProperty('overflow', 'unset')
       }
     }
   }
