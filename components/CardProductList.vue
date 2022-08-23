@@ -100,6 +100,7 @@ export default {
 }
 .card-footer {
   height: 78px;
+  margin-left: auto;
 }
 
 @media only screen and (max-width: 560px) {
@@ -112,6 +113,7 @@ export default {
   }
   .card-footer {
     justify-content: end;
+    margin-left: unset !important;
   }
 }
 </style>
