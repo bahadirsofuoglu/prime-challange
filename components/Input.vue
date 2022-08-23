@@ -1,5 +1,3 @@
-import { placeholder } from '@babel/types';
-
 <template>
   <input :placeholder="placeholder" :class="{ 'border-none': noBorder }" />
 </template>

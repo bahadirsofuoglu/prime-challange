@@ -6,7 +6,7 @@
       <div class="pt-3">
         <card-product-list title="Top Sales" :products="products" />
       </div>
-      <div class="grid pt-3">
+      <div class="grid pt-3 content-wrapper">
         <div
           class=" md:col-12 sm:col-12 lg:col-4"
           v-for="product in detailProducts"

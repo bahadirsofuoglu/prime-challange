@@ -1,7 +1,7 @@
 <template>
   <div class="search-input-container flex flex-row align-items-center">
     <Icon name="search" class="pr-3" />
-    <Input type="text" placeholder="Search" class="border-none" />
+    <Input type="text" placeholder="Search" class="border-none text-500" />
   </div>
 </template>
 
@@ -15,5 +15,8 @@ input {
 }
 input:focus {
   outline: none;
+}
+input::placeholder {
+  color: #9e9e9e;
 }
 </style>

@@ -9,15 +9,16 @@
         class="icon cursor-pointer"
         @click="toggleSidebar"
       />
-      <SearchInput />
-      <div>
+      <SearchInput v-if="!isMobile()" />
+      <div class="flex align-items-center">
+        <Icon v-if="isMobile()" name="search" class="mr-3" />
         <Icon
           v-for="menuItem in menuItems"
           :key="menuItem.name"
           :name="menuItem.name"
           class="mr-3"
         />
-        <img />
+        <img src="@/assets/img/avatar.png" class="mr-3" />
       </div>
     </div>
   </div>
