@@ -10,9 +10,9 @@
       <div class="pt-4">
         <card-product-list title="Top Sales" :products="products" />
       </div>
-      <div class="grid pt-3 content-wrapper">
+      <div class="grid content-wrapper">
         <div
-          class=" md:col-12 sm:col-12 lg:col-4"
+          class="mt-4 px-2  md:col-12 sm:col-12 lg:col-4"
           v-for="product in detailProducts"
           :key="product.name"
         >

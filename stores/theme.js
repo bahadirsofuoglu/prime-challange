@@ -18,7 +18,7 @@ export const useThemeStore = defineStore('themeStore', {
       if (this.sidebarStatus) {
         sidebarStyle.setProperty('display', 'flex', 'important')
         contentStyle.setProperty('backdrop-filter', 'blur(4px)')
-        contentStyle.setProperty('opacity', '0.3')
+        contentStyle.setProperty('opacity', '0.9')
         bodyStyle.setProperty('overflow', 'hidden')
       } else {
         sidebarStyle.setProperty('display', 'none', 'important')

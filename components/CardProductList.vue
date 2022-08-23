@@ -1,7 +1,9 @@
 <template>
   <div class="card white border-round">
     <div class="flex justify-content-between align-items-center ">
-      <h1 class="pb-1 text-900 text-lg line-height-4 mb-1">{{ title }}</h1>
+      <h1 class="pb-1 text-900 text-2xl line-height-4 font-medium mb-1">
+        {{ title }}
+      </h1>
       <Icon name="ellipsis-v" class="cursor-pointer" />
     </div>
     <div
@@ -33,14 +35,14 @@
               v-for="(star, index) in list.stars"
               :key="star"
               name="star-fill"
-              class="text-yellow-500"
+              class="text-yellow-500 text-xs"
               :class="{ 'ml-1': index !== 0 }"
             />
             <icon
               v-for="star in 5 - list.stars"
               :key="star"
               name="star"
-              class="ml-1"
+              class="ml-1 text-xs"
             />
           </div>
         </div>

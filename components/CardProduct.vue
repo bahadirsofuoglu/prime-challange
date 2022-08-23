@@ -1,17 +1,17 @@
 <template>
-  <div class="card white border-round">
+  <div class="card white border-round font-normal">
     <div>
       <img src="@/assets/img/test.png" />
     </div>
     <div class="flex justify-content-between align-items-center pt-1">
-      <span class="text-900 font-medium">{{ product.name }}</span>
+      <span class="text-900">{{ product.name }}</span>
       <div>
         <icon name="star-fill" class="text-yellow-500 mr-1" />
         <span class="text-900 font-small">{{ product.stars }}</span>
       </div>
     </div>
     <div class="pt-2">
-      <span class="text-sm">{{ product.subTitle }}</span>
+      <span class="text-sm text-600 font-regular">{{ product.subTitle }}</span>
     </div>
     <div class="pt-2">
       <span class="text-blue-500">{{ product.price }}</span>

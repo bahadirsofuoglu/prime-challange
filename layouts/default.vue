@@ -1,7 +1,9 @@
 <template>
   <div>
+    <div v-if="sideBarStatus()" class="overlay"></div>
     <Navbar />
-    <Sidebar v-if="sideBarStatus" />
+    <Sidebar />
+
     <section class="content-section">
       <slot />
     </section>
@@ -36,7 +38,7 @@ export default {
     },
     sideBarStatus () {
       if (!this.isMobile()) {
-        return true
+        return false
       }
       return this.themeStore.sidebarStatus
     }
@@ -44,6 +46,15 @@ export default {
 }
 </script>
 <style>
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
 .content-section {
   padding: 56px 0 0 280px;
 }
