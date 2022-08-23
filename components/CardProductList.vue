@@ -1,13 +1,13 @@
 <template>
   <div class="card white border-round">
-    <div class="flex justify-content-between align-items-center">
+    <div class="flex justify-content-between align-items-center ">
       <h1 class="pb-1 text-900 text-lg line-height-4 mb-1">{{ title }}</h1>
       <Icon name="ellipsis-v" class="cursor-pointer" />
     </div>
     <div
       v-for="list in products"
       :key="list.name"
-      class="flex justify-content-between align-items-center pt-3"
+      class="flex justify-content-between align-items-center pt-3 "
     >
       <div>
         <img src="@/assets/img/product-image.png" />
@@ -34,7 +34,7 @@
           />
         </div>
       </div>
-      <div class="card-footer flex align-items-end flex-column ">
+      <div class="card-footer flex align-items-end flex-column">
         <span class="text-900 font-medium">{{ list.price }}</span>
         <span class="pt-2 text-600 font-normal">{{ list.reviewers }}</span>
       </div>

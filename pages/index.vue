@@ -6,8 +6,14 @@
       <div class="pt-3">
         <card-product-list title="Top Sales" :products="products" />
       </div>
-      <div class="pt-3">
-        <card-product></card-product>
+      <div class="grid pt-3">
+        <div
+          class=" md:col-12 sm:col-12 lg:col-4"
+          v-for="product in detailProducts"
+          :key="product.name"
+        >
+          <card-product :product="product"></card-product>
+        </div>
       </div>
     </div>
   </NuxtLayout>
@@ -57,6 +63,29 @@ export default {
           stars: 4,
           price: '$12345.00',
           reviewers: '123K Reviews'
+        }
+      ],
+      detailProducts: [
+        {
+          name: 'Natoque penatibus',
+          subTitle:
+            'Arcu felis bibendum ut tristique et egestas quis ipsum suspendisse.',
+          stars: '5.0',
+          price: '$123.00'
+        },
+        {
+          name: 'Natoque penatibus',
+          subTitle:
+            'Arcu felis bibendum ut tristique et egestas quis ipsum suspendisse.',
+          stars: '5.0',
+          price: '$123.00'
+        },
+        {
+          name: 'Natoque penatibus',
+          subTitle:
+            'Arcu felis bibendum ut tristique et egestas quis ipsum suspendisse.',
+          stars: '5.0',
+          price: '$123.00'
         }
       ]
     }
