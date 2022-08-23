@@ -10,10 +10,21 @@
 <script>
 import Navbar from './Navbar.vue'
 import Sidebar from './Sidebar.vue'
+import { useThemeStore } from '@/stores/theme'
 export default {
   components: {
     Navbar,
     Sidebar
+  },
+  data () {
+    return {
+      themeStore: useThemeStore()
+    }
+  },
+  methods: {
+    toggleSidebar () {
+      this.themeStore.changeSidebarStatus()
+    }
   }
 }
 </script>

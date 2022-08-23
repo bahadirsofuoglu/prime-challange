@@ -1,6 +1,7 @@
 <template>
   <div
-    class="sidebar-container fixed left-0 flex flex-column border-right-solid border-right-1 border-300 border-top-0 pl-3"
+    class="sidebar-mobile sidebar-container fixed left-0 flex flex-column surface-0 border-right-solid border-right-1 border-300 border-top-0 pl-3"
+    v-click-outside="clickOutside"
   >
     <div>
       <img src="@/assets/svg/logo-export.svg" class="pt-3" />
@@ -16,6 +17,8 @@
 
 <script>
 import MenuItems from './components/MenuItems.vue'
+import { useThemeStore } from '@/stores/theme'
+
 export default {
   components: {
     MenuItems
@@ -67,7 +70,23 @@ export default {
             }
           ]
         }
-      ]
+      ],
+      themeStore: useThemeStore()
+    }
+  },
+  methods: {
+    toggleSidebar () {
+      this.themeStore.changeSidebarStatus()
+    },
+    isMobile () {
+      return screen.width < 568
+    },
+    clickOutside () {
+      if (!this.isMobile()) {
+        return
+      }
+
+      this.themeStore.changeSidebarStatus(false)
     }
   }
 }
