@@ -1,13 +1,13 @@
 <template>
   <NuxtLayout>
-    <div class="p-3 surface-50">
+    <div class="px-4 py-3 surface-50">
       <h1
-        class="pb-1 text-900 text-2xl font-normal line-height-3 line-height-4 mb-1"
+        class="text-900 text-2xl font-normal line-height-3 line-height-4 mb-1"
       >
         Popular Products
       </h1>
       <span class="text-lg">Selected Exclusively</span>
-      <div class="pt-3">
+      <div class="pt-4">
         <card-product-list title="Top Sales" :products="products" />
       </div>
       <div class="grid pt-3 content-wrapper">

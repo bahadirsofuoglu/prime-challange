@@ -15,24 +15,20 @@
       />
     </div>
     <div class="pr-3">
-      <div
-        class="border-top-1 border-300 flex justify-content-between align-items-center py-2"
-      >
-        <img src="@/assets/img/avatar.png" />
-        <span class="text-900 flex-1 pl-2">Amy Elsner</span>
-        <icon name="chevron-up" />
-      </div>
+      <avatar-dropdown />
     </div>
   </div>
 </template>
 
 <script>
 import MenuItems from './components/MenuItems.vue'
+import AvatarDropdown from './components/AvatarDropdown.vue'
 import { useThemeStore } from '@/stores/theme'
 
 export default {
   components: {
-    MenuItems
+    MenuItems,
+    AvatarDropdown
   },
   data () {
     return {
