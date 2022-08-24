@@ -41,6 +41,17 @@ export default {
     if (isMobile()) {
       this.themeStore.changeSidebarStatus(false)
     }
+
+    window.addEventListener('resize', () => {
+      if (isMobile()) {
+        window.location.reload()
+      } else {
+        window.location.reload()
+      }
+    })
+  },
+  unmounted () {
+    window.removeEventListener('resize')
   },
   methods: {
     toggleSidebar () {
