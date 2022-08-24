@@ -13,6 +13,8 @@
 import Navbar from './Navbar.vue'
 import Sidebar from './Sidebar.vue'
 import { useThemeStore } from '@/stores/theme'
+import { isMobile } from '@/utils'
+
 export default {
   components: {
     Navbar,
@@ -30,14 +32,8 @@ export default {
     toggleSidebar () {
       this.themeStore.changeSidebarStatus()
     },
-    isMobile () {
-      if (process.client) {
-        return screen.width < 568
-      }
-      return true
-    },
     sideBarStatus () {
-      if (!this.isMobile()) {
+      if (!isMobile()) {
         return false
       }
       return this.themeStore.sidebarStatus

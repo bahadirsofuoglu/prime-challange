@@ -26,6 +26,7 @@
 <script>
 import SearchInput from './components/SearchInput.vue'
 import { useThemeStore } from '@/stores/theme'
+import { isMobile } from '@/utils'
 
 export default {
   components: {
@@ -46,18 +47,11 @@ export default {
     }
   },
   mounted () {
-    this.isMobileDevice = this.isMobile()
+    this.isMobileDevice = isMobile()
   },
   methods: {
     toggleSidebar () {
       this.themeStore.changeSidebarStatus()
-    },
-    isMobile () {
-      if (process.client) {
-        return screen.width < 568
-      }
-
-      return true
     }
   }
 }

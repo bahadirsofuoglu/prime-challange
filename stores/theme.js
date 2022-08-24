@@ -11,7 +11,6 @@ export const useThemeStore = defineStore('themeStore', {
       this.sidebarStatus = status === false ? status : !this.sidebarStatus
 
       const bodyStyle = document.querySelector('body').style
-
       const sidebarStyle = document.querySelector('.sidebar-container').style
       const contentStyle = document.querySelector('.content-section').style
 

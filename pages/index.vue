@@ -24,74 +24,12 @@
 </template>
 
 <script>
+import { productsList, productDetails } from '../data/products'
 export default {
   data () {
     return {
-      products: [
-        {
-          name: 'Dui id ornare arcu',
-          brand: 'Zara',
-          tag: '$12.34',
-          stars: 4,
-          price: '$12345.00',
-          reviewers: '123K Reviews'
-        },
-        {
-          name: 'Dui id ornare arcu',
-          brand: 'Zara',
-          tag: '$12.34',
-          stars: 4,
-          price: '$12345.00',
-          reviewers: '123K Reviews'
-        },
-        {
-          name: 'Dui id ornare arcu',
-          brand: 'Zara',
-          tag: '$12.34',
-          stars: 4,
-          price: '$12345.00',
-          reviewers: '123K Reviews'
-        },
-        {
-          name: 'Dui id ornare arcu',
-          brand: 'Zara',
-          tag: '$12.34',
-          stars: 4,
-          price: '$12345.00',
-          reviewers: '123K Reviews'
-        },
-        {
-          name: 'Dui id ornare arcu',
-          brand: 'Zara',
-          tag: '$12.34',
-          stars: 4,
-          price: '$12345.00',
-          reviewers: '123K Reviews'
-        }
-      ],
-      detailProducts: [
-        {
-          name: 'Natoque penatibus',
-          subTitle:
-            'Arcu felis bibendum ut tristique et egestas quis ipsum suspendisse.',
-          stars: '5.0',
-          price: '$123.00'
-        },
-        {
-          name: 'Natoque penatibus',
-          subTitle:
-            'Arcu felis bibendum ut tristique et egestas quis ipsum suspendisse.',
-          stars: '5.0',
-          price: '$123.00'
-        },
-        {
-          name: 'Natoque penatibus',
-          subTitle:
-            'Arcu felis bibendum ut tristique et egestas quis ipsum suspendisse.',
-          stars: '5.0',
-          price: '$123.00'
-        }
-      ]
+      products: productsList,
+      detailProducts: productDetails
     }
   }
 }

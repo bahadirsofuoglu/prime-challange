@@ -24,7 +24,8 @@
 import MenuItems from './components/MenuItems.vue'
 import AvatarDropdown from './components/AvatarDropdown.vue'
 import { useThemeStore } from '@/stores/theme'
-
+import { isMobile } from '@/utils'
+import { items } from '@/data/menuItems'
 export default {
   components: {
     MenuItems,
@@ -32,57 +33,12 @@ export default {
   },
   data () {
     return {
-      menuItems: [
-        {
-          title: 'Favorites',
-          children: [
-            {
-              title: 'Dashboard',
-              icon: 'home',
-              active: true
-            },
-            {
-              title: 'Bookmarks',
-              icon: 'bookmark'
-            },
-            {
-              title: 'Team',
-              icon: 'users'
-            },
-            {
-              title: 'Messages',
-              icon: 'comments',
-              count: 3
-            },
-            {
-              title: 'Calendar',
-              icon: 'calendar'
-            }
-          ]
-        },
-        {
-          title: 'Application',
-          children: [
-            {
-              title: 'Projects',
-              icon: 'folder'
-            },
-            {
-              title: 'Reports',
-              icon: 'chart-bar'
-            },
-            {
-              title: 'Settings',
-              icon: 'cog'
-            }
-          ]
-        }
-      ],
+      menuItems: items,
       themeStore: useThemeStore()
     }
   },
   mounted () {
-    if (this.isMobile()) {
+    if (isMobile()) {
       this.themeStore.changeSidebarStatus(false)
     }
   },
@@ -90,14 +46,8 @@ export default {
     toggleSidebar () {
       this.themeStore.changeSidebarStatus()
     },
-    isMobile () {
-      if (process.client) {
-        return screen.width < 568
-      }
-      return true
-    },
     clickOutside () {
-      if (!this.isMobile()) {
+      if (!isMobile()) {
         return
       }
 

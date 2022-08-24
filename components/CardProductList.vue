@@ -58,6 +58,7 @@
 </template>
 
 <script>
+import { isMobile } from '@/utils'
 export default {
   props: {
     title: {
@@ -75,16 +76,7 @@ export default {
     }
   },
   mounted () {
-    this.isMobileDevice = this.isMobile()
-  },
-  methods: {
-    isMobile () {
-      if (!process.client) {
-        return
-      }
-
-      return screen.width < 568
-    }
+    this.isMobileDevice = isMobile()
   }
 }
 </script>
